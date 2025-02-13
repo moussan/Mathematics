@@ -1,0 +1,197 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}    % Required for maths
+
+\title{Integral Calculus Primer}
+\author{Moussa El Najmi}
+\date{February 2025}
+
+\begin{document}
+
+\maketitle
+\section{Introduction}
+\paragraph{Here’s an advanced primer on Integral Calculus, covering rules, equations, formulas, and techniques in detail.}
+\newpage
+\section{Fundamentals of Integral Calculus}
+\subsection{Definition of an Integral}
+\subsubsection{Indefinite Integral (Antiderivative)}
+The indefinite integral of \( f(x) \) is a function \( F(x) \) such that:
+\[
+\int f(x) \, dx = F(x) + C
+\]
+where \( C \) is the constant of integration.
+\subsubsection{Definite Integral}
+The definite integral of \( f(x) \) over \( [a, b] \) is:
+\[
+\int_a^b f(x) \, dx = F(b) - F(a)
+\]
+where \( F(x) \) is an antiderivative of \( f(x) \).
+\newpage
+\section{Fundamental Theorem of Calculus}
+\subsection{Differentiation of an Integral:}
+   \[
+   \frac{d}{dx} \int_a^x f(t) dt = f(x)
+   \]
+\subsection{Evaluation of a Definite Integral:}
+   \[
+   \int_a^b f(x) dx = F(b) - F(a)
+   \]
+\newpage
+\section{Basic Integration Rules}
+\subsection{Power Rule}
+\[
+\int x^n dx = \frac{x^{n+1}}{n+1} + C, \quad n \neq -1
+\]
+\subsection{Constant Rule}
+\[
+\int c \, dx = cx + C
+\]
+\subsection{Sum/Difference Rule}
+\[
+\int [f(x) \pm g(x)] dx = \int f(x) dx \pm \int g(x) dx
+\]
+\subsection{Constant Multiplication Rule}
+\[
+\int c f(x) dx = c \int f(x) dx
+\]
+\subsection{Integration by Substitution (Change of Variables)}
+If \( u = g(x) \), then:
+\[
+\int f(g(x)) g'(x) dx = \int f(u) du
+\]
+
+Example:
+\[
+\int x e^{x^2} dx
+\]
+Let \( u = x^2 \), so \( du = 2x dx \).
+\[
+\frac{1}{2} \int e^u du = \frac{1}{2} e^u + C = \frac{1}{2} e^{x^2} + C
+\]
+\newpage
+\section{Advanced Integration Techniques}
+\subsection{Integration by Parts}
+\[
+\int u \, dv = uv - \int v \, du
+\]
+Choose:
+- \( u \) = a function that simplifies when differentiated.
+- \( dv \) = a function that is easy to integrate.
+
+Example:
+\[
+\int x e^x dx
+\]
+Let \( u = x \), \( dv = e^x dx \), then:
+\[
+du = dx, \quad v = e^x
+\]
+\[
+\int x e^x dx = x e^x - \int e^x dx = x e^x - e^x + C
+\]
+
+\subsection{Trigonometric Integrals}
+Integrate expressions involving sin, cos, tan, sec, csc, cot using identities.
+
+Example:
+\[
+\int \sin^3 x \cos x dx
+\]
+Use \( u = \sin x \), so \( du = \cos x dx \):
+\[
+\int u^3 du = \frac{u^4}{4} + C = \frac{\sin^4 x}{4} + C
+\]
+
+\subsection{Trigonometric Substitution}
+Used for integrals involving:
+- \( \sqrt{a^2 - x^2} \Rightarrow x = a \sin \theta \)
+- \( \sqrt{a^2 + x^2} \Rightarrow x = a \tan \theta \)
+- \( \sqrt{x^2 - a^2} \Rightarrow x = a \sec \theta \)
+
+Example:
+\[
+\int \frac{dx}{\sqrt{9 - x^2}}
+\]
+Let \( x = 3 \sin \theta \), then \( dx = 3 \cos \theta d\theta \).
+\[
+\int \frac{3 \cos \theta d\theta}{\sqrt{9 - 9\sin^2 \theta}}
+\]
+Since \( \sqrt{9(1 - \sin^2 \theta)} = 3 \cos \theta \), it simplifies to:
+\[
+\int d\theta = \theta + C = \sin^{-1} \left(\frac{x}{3} \right) + C
+\]
+
+\subsection{Partial Fraction Decomposition}
+Used when integrating rational functions:
+\[
+\int \frac{P(x)}{Q(x)} dx
+\]
+where \( Q(x) \) is factored.
+
+Example:
+\[
+\int \frac{3x+5}{(x+1)(x+2)} dx
+\]
+Decompose:
+\[
+\frac{3x+5}{(x+1)(x+2)} = \frac{A}{x+1} + \frac{B}{x+2}
+\]
+Solving for \( A, B \), we integrate separately.
+
+\subsection{Improper Integrals}
+If \( \int_a^\infty f(x) dx \) or \( \int_{-\infty}^{\infty} f(x) dx \), take limits.
+
+Example:
+\[
+\int_1^\infty \frac{1}{x^2} dx
+\]
+\[
+\lim_{b \to \infty} \left[ -\frac{1}{x} \right]_1^b
+\]
+\[
+\lim_{b \to \infty} \left( -\frac{1}{b} + 1 \right) = 1
+\]
+\newpage
+\section{Special Integrals}
+\subsection{Gaussian Integral}
+\[
+\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+\]
+\subsection{Beta Function}
+\[
+B(x,y) = \int_0^1 t^{x-1} (1-t)^{y-1} dt
+\]
+\subsection{Gamma Function}
+\[
+\Gamma(n) = \int_0^\infty x^{n-1} e^{-x} dx, \quad \Gamma(n) = (n-1)!
+\]
+\subsection{Dirichlet Integrals}
+\[
+\int_0^\infty \frac{\sin x}{x} dx = \frac{\pi}{2}
+\]
+\newpage
+\section{Applications of Integration}
+\subsection{Area Under a Curve}
+\[
+A = \int_a^b f(x) dx
+\]
+\subsection{Arc Length}
+\[
+L = \int_a^b \sqrt{1 + \left(\frac{dy}{dx}\right)^2} dx
+\]
+\subsection{Surface Area of Revolution}
+\[
+S = \int_a^b 2\pi f(x) \sqrt{1 + \left(\frac{dy}{dx}\right)^2} dx
+\]
+\subsection{Volume by Integration}
+- Disk Method:
+  \[
+  V = \pi \int_a^b [f(x)]^2 dx
+  \]
+- Shell Method:
+  \[
+  V = 2\pi \int_a^b x f(x) dx
+  \]
+\newpage
+\paragraph{This primer covers the rules, techniques, and advanced applications of Integral Calculus.}
+\end{document}
