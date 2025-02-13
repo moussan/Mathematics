@@ -1,0 +1,205 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}    % Required for maths
+
+\title{Differential Calculus Primer}
+\author{Moussa El Najmi}
+\date{February 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+\paragraph{Here’s an advanced primer on \textbf{Differential Calculus}, covering rules, equations, formulas, and techniques comprehensively.}
+\newpage
+\section{Foundations of Differential Calculus}
+\subsection{Definition of a Derivative}
+For a function \( f(x) \), the \textbf{derivative} is defined as:
+\[
+f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}
+\]
+This gives the \textbf{instantaneous rate of change} of \( f(x) \) at \( x \).
+\subsection{Alternative notations:}
+\[
+\frac{d}{dx} f(x), \quad Df(x), \quad \dot{f}(x) \text{ (Newton's notation for time derivatives)}
+\]
+\newpage
+\section{Basic Differentiation Rules}
+\subsection{Power Rule}
+\[
+\frac{d}{dx} x^n = n x^{n-1}, \quad \text{for } n \in \mathbb {R}
+\]
+\subsection{Constant Rule}
+\[
+\frac{d}{dx} C = 0, \quad C \text{ is a constant}
+\]
+\subsection{Constant Multiple Rule}
+\[
+\frac{d}{dx} [c f(x)] = c f'(x), \quad c \text{ is a constant}
+\]
+\subsection{Sum and Difference Rule}
+\[
+\frac{d}{dx} [f(x) \pm g(x)] = f'(x) \pm g'(x)
+\]
+\subsection{Product Rule}
+\[
+\frac{d}{dx} [f(x) g(x)] = f'(x) g(x) + f(x) g'(x)
+\]
+\subsection{Quotient Rule}
+\[
+\frac{d}{dx} \left[\frac{f(x)}{g(x)}\right] = \frac{f'(x)g(x) - f(x)g'(x)}{[g(x)]^2}, \quad g(x) \neq 0
+\]
+\subsection{Chain Rule (Composite Functions)}
+If \( y = f(g(x)) \), then:
+\[
+\frac{dy}{dx} = f'(g(x)) g'(x)
+\]
+\newpage
+\section{Advanced Differentiation Techniques}
+
+\subsection{Implicit Differentiation}
+
+Used when \( y \) is given implicitly in terms of \( x \):  
+\[
+\frac{d}{dx} [F(x, y) = 0] \Rightarrow F_x + F_y \frac{dy}{dx} = 0
+\]
+
+Example: Differentiate \( x^2 + y^2 = 1 \)  
+\[
+2x + 2y \frac{dy}{dx} = 0 \Rightarrow \frac{dy}{dx} = -\frac{x}{y}
+\]
+
+\subsection{Logarithmic Differentiation}
+
+Used for functions of the form \( f(x)^{g(x)} \) or complicated products:
+
+1. Take natural log:  
+   \[
+   y = f(x)^{g(x)} \Rightarrow \ln y = g(x) \ln f(x)
+   \]
+
+2. Differentiate both sides using the product rule.
+
+3. Solve for \( \frac{dy}{dx} \).
+
+Example:
+\[
+y = x^x \Rightarrow \ln y = x \ln x
+\]
+Differentiate:
+\[
+\frac{1}{y} \frac{dy}{dx} = \ln x + 1
+\]
+Multiply by \( y \):
+\[
+\frac{dy}{dx} = x^x (\ln x + 1)
+\]
+
+\newpage
+\section{Higher-Order Derivatives}
+ 
+\subsection{Second Derivative}
+\[
+f''(x) = \frac{d^2 y}{dx^2} = \frac{d}{dx} \left( \frac{dy}{dx} \right)
+\]
+
+\subsection{Nth Order Derivative}
+\[
+f^{(n)}(x) = \frac{d^n y}{dx^n}
+\]
+
+Example:  
+If \( f(x) = e^x \), then:
+\[
+f^{(n)}(x) = e^x
+\]
+
+\newpage
+\section{Differentiation of Special Functions}
+
+\subsection{Trigonometric Functions}
+\[
+\frac{d}{dx} \sin x = \cos x, \quad \frac{d}{dx} \cos x = -\sin x
+\]
+\[
+\frac{d}{dx} \tan x = \sec^2 x, \quad \frac{d}{dx} \cot x = -\csc^2 x
+\]
+
+\subsection{Inverse Trigonometric Functions}
+\[
+\frac{d}{dx} \sin^{-1} x = \frac{1}{\sqrt{1-x^2}}, \quad \frac{d}{dx} \cos^{-1} x = -\frac{1}{\sqrt{1-x^2}}
+\]
+\[
+\frac{d}{dx} \tan^{-1} x = \frac{1}{1+x^2}, \quad \frac{d}{dx} \cot^{-1} x = -\frac{1}{1+x^2}
+\]
+
+\subsection{Exponential and Logarithmic Functions}
+\[
+\frac{d}{dx} e^x = e^x, \quad \frac{d}{dx} a^x = a^x \ln a
+\]
+\[
+\frac{d}{dx} \ln x = \frac{1}{x}, \quad \frac{d}{dx} \log_a x = \frac{1}{x \ln a}
+\]
+
+\newpage
+\section{Applications of Differential Calculus}
+\subsection{Critical Points \& Extrema}
+Find local maxima/minima using:
+- First Derivative Test: \( f'(x) = 0 \) and sign analysis.
+- Second Derivative Test:  
+  - \( f''(x) > 0 \) → Local minimum
+  - \( f''(x) < 0 \) → Local maximum
+
+\subsection{Concavity \& Inflection Points}
+\[
+\text{If } f''(x) > 0, \text{ function is concave up (convex)}
+\]
+\[
+\text{If } f''(x) < 0, \text{ function is concave down (concave)}
+\]
+
+\subsection{L'Hôpital’s Rule (Indeterminate Forms)}
+
+If \( \lim_{x \to a} \frac{f(x)}{g(x)} \) results in 0/0 or \( \infty/\infty \),  
+then:
+\[
+\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}
+\]
+
+\subsubsection{Taylor and Maclaurin Series}
+
+Approximates a function using derivatives at a point \( a \):
+\[
+f(x) = f(a) + f'(a)(x-a) + \frac{f''(a)}{2!} (x-a)^2 + \cdots
+\]
+
+Maclaurin Series (at \( a = 0 \)):
+\[
+f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!} x^n
+\]
+
+Example:  
+\[
+e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!}
+\]
+
+\newpage
+\section{Advanced Topics}
+
+\subsection{Differentiation under the Integral Sign (Leibniz Rule)}
+
+If \( I(a) = \int_{a}^{b} f(x, a) dx \), then:
+\[
+\frac{d}{da} I(a) = \int_{a}^{b} \frac{\partial}{\partial a} f(x, a) dx
+\]
+
+\subsection{Functional Derivatives  }
+
+For functionals \( F[y] \), the Euler-Lagrange equation gives extremal functions:
+\[
+\frac{\delta F}{\delta y} = 0
+\]
+\newpage
+\paragraph{This covers core rules, techniques, and applications of Differential Calculus at an advanced level.}
+\end{document}
